@@ -8,7 +8,7 @@
 }
 .Card_Container img{
     background-color: rgb(242, 242, 242);
-    width: 100%;
+    width: 100%; /*Reson why cards are so big*/
     height: auto;
 }
 .Descript_Container{
