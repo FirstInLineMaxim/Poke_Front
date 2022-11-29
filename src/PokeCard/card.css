@@ -1,9 +1,15 @@
 .Card_Display{
     display: grid;
     grid-template-columns: repeat(4, 1fr) ;
+    gap: 0.25rem;
 }
 .Card_Container{
     border: 1px black solid;
+}
+.Card_Container img{
+    background-color: rgb(242, 242, 242);
+    width: 100%;
+    height: auto;
 }
 .Descript_Container{
     border: 1px black solid;
@@ -13,10 +19,10 @@
 }
 /* //https://pokemon.fandom.com/wiki/Types */
 .Types_Container{
-    display: grid;
+    display: flex;
     padding: 0.5rem;
     gap: 0.5rem;
-    grid-template-columns: repeat(auto-fill,4rem);
+  
 }
 .Types_Container > *{
     border-radius: 12px;
