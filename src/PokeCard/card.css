@@ -8,12 +8,23 @@
 .Card_Container{
     border: 1px black solid;
     width: fit-content;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
 }
 .Card_Container img{
     background-color: rgb(242, 242, 242);
     /* width: 100%; Reson why cards are so big */
     max-width: 215px;
     height: auto;
+}
+.Card_Container:hover{
+    animation-name: bounce;
+    animation-timing-function:ease-in-out;
+}
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
 }
 .Descript_Container{
     border: 1px black solid;
@@ -29,7 +40,10 @@
   
 }
 .Types_Container > *{
+    width: 50%;
     border-radius: 12px;
+    padding: 0.25rem;
+    
 }
 .Normal{
 background-color: rgb(168, 168, 120) ;
