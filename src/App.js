@@ -1,8 +1,9 @@
 import './App.css';
-
+import Card from './PokeCard/card';
 function App() {
   return (
     <div className="App">
+      <Card/>
     </div>
   );
 }
