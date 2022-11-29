@@ -19,13 +19,26 @@ const url = (id)=>{
 }
   return (
     <>
+    {/* TODO: making the filter. */}
+    <select>
+        <option value="">Highest Health</option>
+        <option value="">Lowest Health</option>
+        <option value="">A-Z</option>
+        <option value="">Z-A</option>
+        </select>
+        <select>
+        <option value="">Fire</option>
+        <option value="">Bug</option>
+        <option value="">Ground</option>
+        <option value="">Water</option>
+        </select>
     <div className='Card_Display'>
     {data.map(ele => {return( <div key={ele.id} className='Card_Container'>
 
             <img src={url(ele.id)} alt={ele.name.english}/>
             {/* Description */}
             <div className='Descript_Container'>
-                <p>#{ele.id}</p>
+                <p>#{changeNumber(ele.id)}</p>
                 <div>
                 <h3>{ele.name.english}</h3>
                 <div className='Types_Container'>

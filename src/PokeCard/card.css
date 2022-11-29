@@ -1,14 +1,18 @@
 .Card_Display{
     display: grid;
-    grid-template-columns: repeat(4, 1fr) ;
+    justify-items: center;
+    grid-template-columns: repeat(6, 1fr) ;
     gap: 1rem;
 }
+
 .Card_Container{
     border: 1px black solid;
+    width: fit-content;
 }
 .Card_Container img{
     background-color: rgb(242, 242, 242);
-    width: 100%; /*Reson why cards are so big*/
+    /* width: 100%; Reson why cards are so big */
+    max-width: 215px;
     height: auto;
 }
 .Descript_Container{
@@ -97,4 +101,20 @@ background-color: rgb(168, 168, 120) ;
 .Fairy{
     background-color: rgb(240, 182, 188);
 
+}
+
+@media only screen and (max-width: 600px) {
+    .Card_Display{
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(2, 1fr) ;
+        gap: 1rem;
+    }
+  }
+  @media only screen and (min-width:601px ) and (max-width: 900px) {
+    .Card_Display{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr) ;
+        gap: 1rem;
+    }
 }
