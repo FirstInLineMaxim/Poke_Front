@@ -13,20 +13,22 @@ export default function Card() {
         }
 
     }
-
+const url = (id)=>{
+    return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${changeNumber(id)}.png`
+}
   return (
     <>
     <div className='Card_Display'>
-    {data.map(ele => {return( <div className='Card_Container'>
+    {data.map(ele => {return( <div key={ele.id} className='Card_Container'>
                     {/* link options i found pokedex/ detail or full  */}
-            <img src={`https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${changeNumber(ele.id)}.png`} alt={ele.name.english}/>
+            <img src={url(ele.id)} alt={ele.name.english}/>
             {/* Description */}
             <div className='Descript_Container'>
                 <p>#{ele.id}</p>
                 <div>
                 <h3>{ele.name.english}</h3>
                 <div className='Types_Container'>
-                {ele.type.map(ele => (<span className={ele}>{ele}</span>))}
+                {ele.type.map((ele,i) => (<span key={i} className={ele}>{ele}</span>))}
                 </div>
                 </div>
 
