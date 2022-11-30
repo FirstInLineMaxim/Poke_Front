@@ -1,9 +1,9 @@
 import './App.css';
-import Card from './PokeCard/card';
+import Collection from './PokeCard/collection';
 function App() {
   return (
     <div className="App">
-      <Card/>
+      <Collection/>
     </div>
   );
 }
