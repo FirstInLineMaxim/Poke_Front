@@ -27,6 +27,7 @@ export default function Card({ data }) {
     console.log(filterType);
   }
   return (
+    <div className="Card_Body">
     <div key={data.id} className="Card_Container">
       {console.log({ data })}
       <img src={url(data.id)} alt={data.name.english} />
@@ -44,6 +45,7 @@ export default function Card({ data }) {
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 }
