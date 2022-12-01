@@ -1,11 +1,18 @@
-import React,{useState} from 'react'
-import data from '../data/poke.json'
+import React,{useState,useEffect} from 'react'
+import axios from 'axios'
+// import data from '../data/poke.json'
 import './collection.css'
 import Card from './card'
 
 export default function Collection() {
+  const [data, setData] = useState()
+  useEffect(() => {
+    axios.get('https://poke-api-f2zt.onrender.com/api/v1/pokemon').then(data => setData(data.data))
+  }, [])
+  
 
     {/* TODO: making the filter. */}
+    
     // const [filterType, setFilterType] = useState([])
     // function filter(value){
     //     const filtered = data.filter(ele => ele.type[0] === value || ele.type[1] === value)
@@ -29,7 +36,7 @@ export default function Collection() {
         <option value="Water">Water</option>
         </select>
     <div className='Card_Display'>
-    {data.map(ele => <Card data={ele}/>
+    {data && data.map(ele => <Card data={ele}/>
     )}
     </div>
     </>
