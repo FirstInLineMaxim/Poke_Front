@@ -1,0 +1,191 @@
+.Card_Display{
+    display: grid;
+    justify-items: center;
+    grid-template-columns: repeat(6, 1fr) ;
+    gap: 1rem;
+}
+
+.Card_Container{
+    border: 1px black solid;
+    width: fit-content;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+.Card_Container img{
+    background-color: rgb(242, 242, 242);
+    /* width: 100%; Reson why cards are so big */
+    max-width: 215px;
+    height: auto;
+}
+.Card_Container:hover{
+    animation-name: bounce;
+    animation-timing-function:ease-in-out;
+}
+@keyframes bounce {
+  0%   { transform: translateY(0); }
+  50%  { transform: translateY(-20px); }
+  100% { transform: translateY(0); }
+}
+.Descript_Container{
+    border: 1px black solid;
+}
+.Descript_Container p{
+    text-align: left;
+}
+/* //https://pokemon.fandom.com/wiki/Types */
+.Types_Container{
+    display: flex;
+    padding: 0.5rem;
+    gap: 0.5rem;
+  
+}
+.Types_Container > *{
+    width: 50%;
+    border-radius: 12px;
+    padding: 0.25rem;
+    
+}
+.Normal{
+background-color: rgb(168, 168, 120) ;
+}
+.Fire{
+    background-color: rgb(240, 128, 48);
+
+}
+.Water{
+    background-color: rgb(104, 144, 240);
+
+}
+.Grass{
+    background-color: rgb(120, 200, 80) ;
+
+}
+.Electric{
+    background-color:rgb(248, 208, 48);
+
+}
+.Ice{
+    background-color: rgb(152, 216, 216);
+
+}
+.Fighting{
+    background-color: rgb(192, 48, 40);
+
+}
+.Poison{
+    background-color: rgb(160, 64, 160);
+
+}
+.Ground{
+    background-color: rgb(224, 192, 104);
+
+}
+.Flying{
+    background-color: rgb(168, 144, 240);
+
+}
+.Psychic{
+    background-color: rgb(248, 88, 136);
+
+}
+.Bug{
+    background-color: rgb(168, 184, 32);
+
+}
+.Rock{
+    background-color: rgb(184, 160, 56);
+
+}
+.Ghost{
+    background-color: rgb(112, 88, 152);
+
+}
+.Dark{
+    background-color: rgb(112, 88, 72);
+
+}
+.Dragon{
+    background-color: rgb(112, 56, 248);
+
+}
+.Steel{
+    background-color: rgb(184, 184, 208);
+
+}
+.Fairy{
+    background-color: rgb(240, 182, 188);
+
+}
+
+@media only screen and (max-width: 600px) {
+    .Card_Display{
+        display: grid;
+        justify-items: center;
+        grid-template-columns: repeat(2, 1fr) ;
+        gap: 1rem;
+    }
+  }
+  @media only screen and (min-width:601px ) and (max-width: 900px) {
+    .Card_Display{
+        display: grid;
+        grid-template-columns: repeat(4, 1fr) ;
+        gap: 1rem;
+    }
+}
+
+
+/* Loader */
+
+body{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.loader_spinner {
+    position: relative;
+    height: 100px;
+    width: 100px;
+    background: linear-gradient(to bottom, rgb(254, 0, 1) 50%, white 50% );
+    border-radius: 50%;
+    border: 8px solid black;
+    animation: spin 1s linear infinite;
+  }
+  
+  .loader_spinner::before {
+    content: '';
+    position: absolute;
+    height: 8px;
+    width: 100px;
+    background: black;
+    top: 50px;
+    transform: translatey(-50%);
+  }
+  
+  .loader_spinner::after {
+    content: '';
+    position: absolute;
+    height: 38px;
+    width: 38px;
+    border-radius: 50%;
+    background: white;
+    top: 50px;
+    left: 50px;
+    transform: translate(-50%, -50%);
+    box-shadow: inset 0 0 0 8px black, inset 0 0 0 10px white, inset 0 0 0 12px black;
+  
+  }
+  
+  /* Spin Animation */
+  @keyframes spin {
+    from {
+      transform: rotate(0deg);
+    }
+    to {
+      transform: rotate(360deg);
+    }
+  }
+
+
+  
