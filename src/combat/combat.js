@@ -61,8 +61,9 @@ function battleturn(att, deff, hp) {
 //logic for the whole combat until somebody loses
 function combat(p1, p2) {
   if(pokemonlist){
-    let pok1 = pokemonlist[id];
-    let pok2 = pokemonlist[enemy];
+    let pok1 = pokemonlist.find(ele => ele.id == id); // needed to change it so it finds the id
+    let pok2 = pokemonlist.find(ele => ele.id == enemy);
+    console.log('Pok1',pok1)
     let hp1 = pok1.base.HP;
     let hp2 = pok2.base.HP;
     let att1 = pok1.base.Attack;
@@ -107,8 +108,13 @@ function changeNumber(num) {
     return num;
   }
 }
+function findPokemon(thePokemonId){
+  if(pokemonlist)
+  return pokemonlist.find(ele => ele.id == thePokemonId)
+}
 // console.log('Current',combatResult.current)
 combat(id,enemy)
+if(pokemonlist)
 
 return(
   <>
@@ -117,13 +123,13 @@ return(
   <p>enemy id = {enemy}</p>
   <div className='fight_Current'>
     <div className='fight_Pokemon'>
-      <img src={`https://img.pokemondb.net/sprites/black-white/anim/back-normal/${pokemonlist[id].name.english.toLowerCase()}.gif`}></img>
-      <span>{pokemonlist[id].name.english}</span>
+      <img src={`https://img.pokemondb.net/sprites/black-white/anim/back-normal/${findPokemon(id).name.english.toLowerCase()}.gif`}></img>
+      <span>{findPokemon(id).name.english}</span>
     </div>
     <h2> vs </h2>
     <div className='fight_Pokemon'>
-      <img src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemonlist[enemy].name.english.toLowerCase()}.gif`}></img>
-      <span>{pokemonlist[enemy].name.english}</span>
+      <img src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${findPokemon(enemy).name.english.toLowerCase()}.gif`}></img>
+      <span>{findPokemon(enemy).name.english}</span>
     </div>
   </div>
   </>
