@@ -1,10 +1,10 @@
 import React, { useState,useEffect } from "react";
 
-export default function StarterCard({ inComeData }) {
-    const [data, setData] = useState()
-    useEffect(() => {
-        inComeData.then(res => setData(res))
-    })
+export default function StarterCard({ data }) {
+    // const [data, setData] = useState()
+    // useEffect(() => {
+    //     inComeData.then(res => setData(res))
+    // })
     
     
   //trasforms id into a 3 digit exampl 1 => 001 etc for image link url

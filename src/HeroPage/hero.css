@@ -8,8 +8,9 @@
 }
 
 .Fight_Button{
-    position: absolute;
-    bottom: 0;
+    display: block;
+    margin: auto;
+    /* position: relative; */
     border: unset;
     border-radius: 12px;
     height: 4rem;

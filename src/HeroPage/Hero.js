@@ -15,9 +15,16 @@ export default function Hero() {
   return (
     <>
     <div className='Hero_Container'>
+        {/* NAVIGATION */}
+        <div className='TopNav'>
+        <Link className='' to="/choose"><button>Pokedex</button></Link>
+        <Link className='' to="/choose"><button>Leaderboard</button></Link>
+        </div>
+      {/* SETS THE POPUPSCREEN HTML CODE IF ITS PRESENTED */}
         {selectScreen && selectScreen }
         <button onClick={popup} className='Fight_Button'>Fight</button>
-        <Link to="/choose"><button>Pokedex</button></Link>
+        
+
     </div>
     </>
   )
