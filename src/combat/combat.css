@@ -3,6 +3,11 @@ display: flex;
 }
 .fight_Pokemon{
     display: flex;
+    width: fit-content;
+    height: fit-content;
     flex-direction: column;
     border: 1px solid red;
+}
+.fight_Pokemon img{
+    max-width: 10vw;
 }
