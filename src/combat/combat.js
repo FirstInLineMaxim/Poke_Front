@@ -15,7 +15,7 @@ export default function useCombat({id,enemy}) {
   const combatResult = useRef(null)
   // const [combatResult, setCombatResult] = useState()
 useEffect(() => {
-  axios.get('https://poke-api-f2zt.onrender.com/api/v1/pokemon').then(data => setData(data.data))
+  axios.get('https://poke-api-f2zt.onrender.com/api/v1/pokemon').then(data => setData(data.data)).catch(err => console.error(err))
 
 
 }, [])
@@ -99,6 +99,7 @@ function combat(p1, p2) {
 
   }
 }
+//Utility Functions 
 function changeNumber(num) {
   if (num.toString().length === 1) {
     return `00` + num;
@@ -112,10 +113,11 @@ function findPokemon(thePokemonId){
   if(pokemonlist)
   return pokemonlist.find(ele => ele.id == thePokemonId)
 }
-// console.log('Current',combatResult.current)
-combat(id,enemy)
-if(pokemonlist)
 
+
+
+if(pokemonlist)
+combat(id,enemy)
 return(
   <>
   {pokemonlist && 

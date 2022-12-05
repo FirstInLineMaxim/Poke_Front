@@ -32,8 +32,8 @@ axios.get(`https://poke-api-f2zt.onrender.com/api/v1/pokemon/${pokeId3.current}`
       <div className="starter_Container">
 
         <Link to={`Battle/${pokeId1.current}`}><StarterCard data={pokemon1} pokeid={pokeId1.current}/></Link>
-        <StarterCard data={pokemon2} pokeid={pokeId2}/>
-        <StarterCard data={pokemon3} pokeid={pokeId3}/>
+        <Link to={`Battle/${pokeId2.current}`}><StarterCard data={pokemon2} pokeid={pokeId2.current}/></Link>
+        <Link to={`Battle/${pokeId3.current}`}><StarterCard data={pokemon3} pokeid={pokeId3.current}/></Link>
 
       </div>
     </>
