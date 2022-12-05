@@ -5,3 +5,8 @@ gap: 1rem;
 justify-content: center;
 align-items: center;
 }
+a{
+    text-decoration: none;
+    color: black;
+    cursor: url(https://cur.cursors-4u.net/games/gam-13/gam1282.cur), auto !important 
+}
