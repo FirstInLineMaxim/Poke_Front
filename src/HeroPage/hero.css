@@ -21,13 +21,13 @@
 }
 
 .Popup{
+    position: relative;
+    top: 10%;
+    margin: auto;
+    text-align: center;
     background-color: antiquewhite;
     height: 65vh;
     width: 50vw;
-    overflow: scroll;
-    overflow-y: hidden;
-    overflow-wrap:break-word;
-    word-break: break-all;
 }
 
 

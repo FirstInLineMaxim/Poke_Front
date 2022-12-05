@@ -1,8 +1,7 @@
 .starter_Container{
-    display: grid;
-    grid-template-columns: repeat(3,1fr);
-}
-
-.pick_a_card{
-    
+display: flex;
+height: 100%;
+gap: 1rem;
+justify-content: center;
+align-items: center;
 }

@@ -6,10 +6,10 @@ import './hero.css'
 export default function Hero() {
     const [selectScreen, setSelectScreen] = useState()
     function popup(){
-        !selectScreen ? setSelectScreen(<div className='Popup'><Collection className="Collection_Hero"/></div>)
-        : setSelectScreen(null)
-        // !selectScreen ? setSelectScreen(<div className='Popup'><Starter/></div>)
+        // !selectScreen ? setSelectScreen(<div className='Popup'><Collection className="Collection_Hero"/></div>)
         // : setSelectScreen(null)
+        !selectScreen ? setSelectScreen(<div className='Popup'><Starter/></div>)
+        : setSelectScreen(null)
         
     }
   return (
