@@ -1,5 +1,18 @@
+.battleGround_Container{
+    width: 100vw;
+    height: 100vh;
+    background-image: url(./battleField.png);
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
 .fight_Current{
 display: flex;
+
 }
 .fight_Pokemon{
     display: flex;
