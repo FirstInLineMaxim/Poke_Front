@@ -1,3 +1,9 @@
+.Cardinio{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .Card_Display{
     display: grid;
     justify-items: center;

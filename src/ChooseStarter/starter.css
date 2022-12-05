@@ -1,0 +1,8 @@
+.starter_Container{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+}
+
+.pick_a_card{
+    
+}
