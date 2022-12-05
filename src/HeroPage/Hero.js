@@ -20,9 +20,9 @@ export default function Hero() {
         <Link className='' to="/choose"><button>Pokedex</button></Link>
         <Link className='' to="/choose"><button>Leaderboard</button></Link>
         </div>
+        <button onClick={popup} className='Fight_Button'>Fight</button>
       {/* SETS THE POPUPSCREEN HTML CODE IF ITS PRESENTED */}
         {selectScreen && selectScreen }
-        <button onClick={popup} className='Fight_Button'>Fight</button>
         
 
     </div>

@@ -1,0 +1,8 @@
+.fight_Current{
+display: flex;
+}
+.fight_Pokemon{
+    display: flex;
+    flex-direction: column;
+    border: 1px solid red;
+}

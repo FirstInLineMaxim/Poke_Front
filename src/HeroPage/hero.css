@@ -9,8 +9,10 @@
 
 .Fight_Button{
     display: block;
-    margin: auto;
-    /* position: relative; */
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
     border: unset;
     border-radius: 12px;
     height: 4rem;
@@ -18,7 +20,6 @@
     font-size: 3rem;
     background: #ff0000;
     color: #ffffff;
-    margin-bottom: 6rem;
 }
 
 .Popup{

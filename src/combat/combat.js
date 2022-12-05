@@ -1,9 +1,26 @@
-const fs = require("fs");
+import axios from 'axios';
+import {useState,useEffect, useRef} from 'react'
+import './combat.css'
+// const fs = require("fs");
 
-let pokemon = fs.readFileSync("../data/poke.json", "utf8");
-let pokemonlist = JSON.parse(pokemon);
+// let pokemon = fs.readFileSync("../data/poke.json", "utf8");
+// let pokemonlist = JSON.parse(pokemon);
 
-//types strength and weakness
+
+
+
+export default function useCombat({id,enemy}) {
+  console.log(id,enemy)
+  const [pokemonlist, setData] = useState()
+  const combatResult = useRef(null)
+  // const [combatResult, setCombatResult] = useState()
+useEffect(() => {
+  axios.get('https://poke-api-f2zt.onrender.com/api/v1/pokemon').then(data => setData(data.data))
+
+
+}, [])
+
+  //types strength and weakness
 const elements = {
   Normal: {
     strength: [0],
@@ -27,8 +44,9 @@ const elements = {
   },
 };
 
-const PokemonIndex = (p) =>
-  pokemonlist.findIndex((poke) => poke.name.english === p);
+// const PokemonIndex = (p) =>
+// pokemonlist &&
+//   pokemonlist.findIndex((poke) => poke.id === p);
 
 //Logic for a combat turn
 function battleturn(att, deff, hp) {
@@ -42,40 +60,76 @@ function battleturn(att, deff, hp) {
 
 //logic for the whole combat until somebody loses
 function combat(p1, p2) {
-  let pok1 = pokemonlist[PokemonIndex(p1)];
-  let pok2 = pokemonlist[PokemonIndex(p2)];
-  let hp1 = pok1.base.HP;
-  let hp2 = pok2.base.HP;
-  let att1 = pok1.base.Attack;
-  let att2 = pok2.base.Attack;
-  let deff1 = pok1.base.Defense;
-  let deff2 = pok2.base.Defense;
-  let type1 = pok1.type;
-  let type2 = pok2.type;
-
-  console.log(type2);
-  console.log(elements[pok1.type].weakness);
-  console.log(type2.length);
-  for (let i = 0; i < type2.length; i++) {
-    console.log(elements[pok1.type].weakness.includes(String(type2[i])));
-  }
-
-  for (hp1 || hp2; hp1 > 0 && hp2 > 0; 0) {
-    if (pok1.base.speed > pok2.base.speed) {
-      hp2 = battleturn(att1, deff2, hp2);
-      hp1 = battleturn(att2, deff1, hp1);
-      console.log(hp1, hp2);
-    } else {
-      hp1 = battleturn(att2, deff1, hp1);
-      hp2 = battleturn(att1, deff2, hp2);
-      console.log(hp2, hp1);
+  if(pokemonlist){
+    let pok1 = pokemonlist[id];
+    let pok2 = pokemonlist[enemy];
+    let hp1 = pok1.base.HP;
+    let hp2 = pok2.base.HP;
+    let att1 = pok1.base.Attack;
+    let att2 = pok2.base.Attack;
+    let deff1 = pok1.base.Defense;
+    let deff2 = pok2.base.Defense;
+    let type1 = pok1.type;
+    let type2 = pok2.type;
+  
+    // console.log(type2);
+    // // console.log(elements[pok1.type].weakness);
+    // console.log(type2.length);
+    // for (let i = 0; i < type2.length; i++) {
+    //   console.log(elements[pok1.type].weakness.includes(String(type2[i])));
+    // }
+  
+    for (hp1 || hp2; hp1 > 0 && hp2 > 0; 0) {
+      if (pok1.base.speed > pok2.base.speed) {
+        hp2 = battleturn(att1, deff2, hp2);
+        hp1 = battleturn(att2, deff1, hp1);
+        console.log(hp1, hp2);
+      } else {
+        hp1 = battleturn(att2, deff1, hp1);
+        hp2 = battleturn(att1, deff2, hp2);
+        console.log(hp2, hp1);
+      }
     }
+    hp1 <= 0
+      ? combatResult.current = `${pok2.name.english} has won `
+      : combatResult.current = `${pok1.name.english} has won`;
+      console.log('name',pok1.name.english)
+      console.log('name',pok2.name.english)
+
   }
-  hp1 <= 0
-    ? console.log(`${pok2.name.english} has won `)
-    : console.log(`${pok1.name.english} has won`);
+}
+function changeNumber(num) {
+  if (num.toString().length === 1) {
+    return `00` + num;
+  } else if (num.toString().length === 2) {
+    return "0" + num;
+  } else if (num.toString().length === 3) {
+    return num;
+  }
+}
+// console.log('Current',combatResult.current)
+combat(id,enemy)
+
+return(
+  <>
+  {pokemonlist && 
+  <>
+  <p>enemy id = {enemy}</p>
+  <div className='fight_Current'>
+    <div className='fight_Pokemon'>
+      <img src={`https://img.pokemondb.net/sprites/black-white/anim/back-normal/${pokemonlist[id].name.english.toLowerCase()}.gif`}></img>
+      <span>{pokemonlist[id].name.english}</span>
+    </div>
+    <h2> vs </h2>
+    <div className='fight_Pokemon'>
+      <img src={`https://img.pokemondb.net/sprites/black-white/anim/normal/${pokemonlist[enemy].name.english.toLowerCase()}.gif`}></img>
+      <span>{pokemonlist[enemy].name.english}</span>
+    </div>
+  </div>
+  </>
+  }
+  {combatResult.current && <p>{combatResult.current}</p>}
+  </>
+)
 }
 
-/*console.log(pokemontobattle)*/
-
-combat("Charmander", "Squirtle");
