@@ -14,7 +14,7 @@
 .Card_Container img{
     background-color: rgb(242, 242, 242);
     /* width: 100%; Reson why cards are so big */
-    max-width: 215px;
+    max-width: 12vw;
     height: auto;
 }
 .Card_Container:hover{
@@ -188,4 +188,3 @@ body{
   }
 
 
-  

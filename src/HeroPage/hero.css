@@ -1,3 +1,34 @@
 .Hero_Container{
+    height: 100vh;
+    width: 100vw;
+    background-color: #f7cc1e;
     background-image: url(https://jikkyofont.com/wp-content/uploads/2021/08/jikkyou1-3-1024x576.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.Fight_Button{
+    position: absolute;
+    bottom: 0;
+    border: unset;
+    border-radius: 12px;
+    height: 4rem;
+    width: 8rem;
+    font-size: 3rem;
+    background: #ff0000;
+    color: #ffffff;
+    margin-bottom: 6rem;
+}
+
+.Popup{
+    background-color: antiquewhite;
+    height: 65vh;
+    width: 50vw;
+    overflow: scroll;
+    overflow-y: hidden;
+    overflow-wrap:break-word;
+    word-break: break-all;
+}
+.Card_Container{
+    
 }
