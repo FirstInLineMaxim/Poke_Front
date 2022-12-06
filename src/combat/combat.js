@@ -21,28 +21,6 @@ useEffect(() => {
 }, [])
 
   //types strength and weakness
-const elements = {
-  Normal: {
-    strength: [0],
-    weakness: ["Rock", "Ghost", "Steel"],
-  },
-  Fire: {
-    strength: ["Grass", "Ice", "Steel"],
-    weakness: ["Fire", "Water", "Rock", "Dragon"],
-  },
-  Water: {
-    strength: ["Fire", "Ground", "Rock"],
-    weakness: ["Water", "Grass", "Dragon"],
-  },
-  Electric: {
-    strength: ["Water", "Flying"],
-    weakness: ["Electric", "Grass", "Ground", "Dragon"],
-  },
-  Grass: {
-    strength: ["Water", "Ground", "Rock"],
-    weakness: ["Fire", "Grass", "Poison", "Flying", "Bug", "Dragon", "Steel"],
-  },
-};
 
 // const PokemonIndex = (p) =>
 // pokemonlist &&

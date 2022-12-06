@@ -10,3 +10,20 @@ a{
     color: black;
     cursor: url(https://cur.cursors-4u.net/games/gam-13/gam1282.cur), auto !important 
 }
+.TitleAndStarter{
+    text-align: center;
+}
+.popup_loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.info{
+    position: absolute;
+    z-index: 1;
+    /* left: 12vw;
+    bottom: 19vh; */
+}
+.info img{
+    height: 40px;
+}
