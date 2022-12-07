@@ -5,6 +5,7 @@ import '../combat/combat.css'
 
 export default function BattleGround() {
 
+  
     function random() {
         return Math.floor(Math.random() * 809 + 1);
       }
@@ -12,11 +13,11 @@ export default function BattleGround() {
     let {id} = useParams()
   return (
     <>
+    
     <div className='battleGround_Container'>
-    <h1>Just the Battle nothing to see here </h1>
-    <p>Selected Pokemon id = {id}</p>
-    <h2>{useCombat({id,enemy:random()})}</h2>
+    <h1 className= 'title'>And now the clashing of titans! </h1>
+    <h2>{useCombat({id,enemy:270})}</h2>
     </div>
-    </>
+     </>
   )
 }

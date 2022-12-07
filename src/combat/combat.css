@@ -1,26 +1,104 @@
 .battleGround_Container{
     width: 100vw;
     height: 100vh;
-    background-image: url(./battleField.png);
+    background-image: url(./battleField2.png);
     background-repeat: no-repeat;
     background-position: center;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
+    background-color: beige;
+    z-index:1;
 }
+
+.title {
+position:absolute;
+bottom:700px;
+
+}
+.winner {
+position:absolute;
+left:800px;
+bottom:300px;
+}
+
+/*.fight_Current h1{
+ position:absolute;
+ left:950px;
+ bottom:450px;
+   }*/
 
 .fight_Current{
 display: flex;
 
 }
-.fight_Pokemon{
+.panel {
+height:9vh;
+width:09vw;
+
+z-index:5;
+position:absolute;
+left:1040px;
+top:555px;
+display:flex;
+flex-direction: row;
+justify-content: space-between;
+align-items: flex-start;
+flex-wrap:wrap;
+}
+.panel p{
+margin:5px 0 0 10px;
+font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
+
+.ct {
+position: absolute;
+left: 730px;
+bottom:330px;
+
+
+}
+
+
+.fight_Pokemon1{
+    position:absolute;
+    left: 800px;
     display: flex;
     width: fit-content;
     height: fit-content;
     flex-direction: column;
-    border: 1px solid red;
+    
 }
-.fight_Pokemon img{
+
+.namepok1 {
+position:absolute;
+left:1010px;
+bottom:450px;
+
+}
+
+.namepok2 {
+position:absolute;
+left:38%;
+top:320px;
+
+
+}
+
+.fight_Pokemon2{
+    position: absolute;
+    top:330px;
+    left:1050px;
+    display: flex;
+    width: fit-content;
+    height: fit-content;
+    flex-direction: column;
+    
+}
+
+
+
+
+.fight_Pokemon1 img{
     max-width: 10vw;
 }
