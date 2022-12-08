@@ -1,5 +1,6 @@
 import axios from 'axios';
 import {useState,useEffect, useRef} from 'react'
+import UserCreate from '../UserCreate';
 import './combat.css'
 // const fs = require("fs");
 
@@ -13,12 +14,19 @@ export default function useCombat({id,enemy}) {
   console.log(id,enemy)
   const [pokemonlist, setData] = useState()
   const combatResult = useRef(null)
+  const [roundswon,setRoundswon] = useState(0)
   // const [combatResult, setCombatResult] = useState()
 useEffect(() => {
   axios.get('https://poke-api-f2zt.onrender.com/api/v1/pokemon').then(data => setData(data.data)).catch(err => console.error(err))
 
 
-}, [])
+}, [id])
+
+//runs only combat if roundswons increses and pokemonlist loads which is going to be 1 time
+useEffect(() => {
+  pokemonlist &&
+  combat(id,enemy)
+}, [pokemonlist,roundswon])
 
   //types strength and weakness
 
@@ -69,9 +77,12 @@ function combat(p1, p2) {
         console.log(hp2, hp1);
       }
     }
-    hp1 <= 0
-      ? combatResult.current = `${pok2.name.english} has won `
-      : combatResult.current = `${pok1.name.english} has won`;
+    if(hp1 <= 0){
+      combatResult.current = `${pok2.name.english} has won `
+    }else{
+      combatResult.current = `${pok1.name.english} has won` 
+      setRoundswon(prev => prev+1); 
+    }
       console.log('name',pok1.name.english)
       console.log('name',pok2.name.english)
 
@@ -95,7 +106,6 @@ function findPokemon(thePokemonId){
 
 
 if(pokemonlist)
-combat(id,enemy)
 return(
   <>
   {pokemonlist && 
@@ -110,11 +120,13 @@ return(
     <div className='fight_Pokemon'>
       <img src={`https://projectpokemon.org/images/normal-sprite/${findPokemon(enemy).name.english.toLowerCase()}.gif`}></img>
       <span>{findPokemon(enemy).name.english}</span>
+      <span>{roundswon}</span>
     </div>
   </div>
   </>
   }
   {combatResult.current && <p>{combatResult.current}</p>}
+  <UserCreate score={roundswon} pokemon={findPokemon(id)}/>
   </>
 )
 }
