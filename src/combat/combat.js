@@ -58,7 +58,7 @@ function battleturn(att, deff, hp) {
   }
 }
 
-function battleturn1(att1,deff1,hp1,att2,deff2,hp2,speed1,speed2) {
+/*function battleturn1(att1,deff1,hp1,att2,deff2,hp2,speed1,speed2) {
       if(speed1 >= speed2) {
       switch (true) {
             case att1 > deff2:
@@ -76,7 +76,7 @@ function battleturn1(att1,deff1,hp1,att2,deff2,hp2,speed1,speed2) {
                   case deff2 > att1:
                 return   sethp(prev => prev- 1);
                    break;
-                }}}
+                }}}*/
 
 
 //logic for the whole combat until somebody loses
@@ -162,7 +162,7 @@ let pok1 = pokemonlist.find(ele => ele.id == id); // needed to change it so it f
 hpnow.current = hp1
 hpnow2.current = hp2
 console.log(speed2)
-console.log(battleturn1(att1,deff1,hp1,att2,deff2,hp2,speed1,speed2))
+
 
 return(
   <>
@@ -179,12 +179,13 @@ return(
       <img src={`https://projectpokemon.org/images/normal-sprite/${findPokemon(enemy).name.english.toLowerCase()}.gif`}></img>
      </div>
     <div className= 'namepok2'>{findPokemon(enemy).name.english} <span>{thpresult2 ? thpresult2 : sethp2(hpnow2.current)}/{findPokemon(enemy).base.HP} HP</span></div>
-  {/*  <div className='panel' > <p onClick={e => { if(speed1 > speed2) {sethp2(battleturn(att1,deff2,thpresult2));settext(`Pok2 lost ${hpnow2.current - thpresult2} hp`);
+    <div className='panel' > <p onClick={e => { if(speed1 > speed2) {sethp2(battleturn(att1,deff2,thpresult2));settext(`Pok2 lost ${hpnow2.current - thpresult2} hp`);
      setTimeout(() => {sethp(battleturn(att2,deff1,thpresult1));settext(`Pok1 lost ${hpnow.current - thpresult1} hp`)},5000)}
-     else {sethp2(battleturn(att1,deff2,thpresult2)); sethp(battleturn(att2,deff1,thpresult1)) ;settext(`Pok2 lost ${hp2 - hpnow2.current} hp`)}}}>Attack</p>
+     else {sethp(battleturn(att2,deff1,thpresult1));settext(`Pok1 lost ${hpnow.current - thpresult1} hp`);
+     setTimeout(() =>  {sethp(battleturn(att1,deff2,thpresult2)) ;settext(`Pok2 lost ${hpnow.current - thpresult1} hp`)},5000)}}}>Attack</p>
     <p onClick={e => console.log(thpresult1,att2)}>Item </p>
-    <p onClick={e => console.log(battleturn1(att1,deff1,hp1,att2,deff2,hp2,speed1,speed2))  }>Flee</p>
-  <p>{maxhp1}</p></div> */}
+    <p onClick={e => console.log(0)  }>Flee</p>
+  <p>{maxhp1}</p></div> 
   </div>
   </>
   }
