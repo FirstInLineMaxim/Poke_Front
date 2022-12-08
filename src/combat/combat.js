@@ -193,28 +193,21 @@ export default function useCombat({ id, enemy }) {
               <p
                 onClick={(e) => {
                   if (speed1 > speed2) {
-                    minushp2 = minushp2 -  battleturn(att1, deff2, thpresult2);
-                    minushp1 = minushp1 - battleturn(att2, deff1, thpresult1)
-                    settext(`${name2} lost ${minushp2} hp`);
+                        settext(`${name2} lost ${minushp2} hp`);
                      sethp2(battleturn(att1, deff2, thpresult2));
                      setTimeout(() => {
                       settext(`${name1} lost ${minushp1} hp`);
                       sethp(battleturn(att2, deff1, thpresult1));
-                      minushp1 = thpresult1;
                       }, 5000);
-                      minushp2 = thpresult2;
-                      
+                       
                   } else {
-                    minushp2 = minushp2 -  battleturn(att1, deff2, thpresult2);
-                    minushp1 = minushp1 - battleturn(att2, deff1, thpresult1);
-                    settext(`${name1} lost ${minushp1} hp`);
+                     settext(`${name1} lost ${minushp1} hp`);
                     sethp(battleturn(att2, deff1, thpresult1));
                      setTimeout(() => {
                       settext(`${name2} lost ${minushp2} hp`);
-                      sethp(battleturn(att1, deff2, thpresult2));
-                      minushp2 = thpresult2;
-                       }, 5000);
-                       minushp1 = thpresult1;
+                      sethp2(battleturn(att1, deff2, thpresult2));
+                                }, 5000);
+                     
                   }
                 }}
               >
