@@ -179,10 +179,12 @@ return(
       <img src={`https://projectpokemon.org/images/normal-sprite/${findPokemon(enemy).name.english.toLowerCase()}.gif`}></img>
      </div>
     <div className= 'namepok2'>{findPokemon(enemy).name.english} <span>{thpresult2 ? thpresult2 : sethp2(hpnow2.current)}/{findPokemon(enemy).base.HP} HP</span></div>
-    <div className='panel' > <p onClick={e => { if(speed1 > speed2) {sethp(battleturn(att2,deff1,thpresult1)); sethp2(battleturn(att1,deff2,thpresult2)); settext(`Pok1 lost ${hp1 - hpnow.current} hp`)} else {sethp2(battleturn(att1,deff2,thpresult2)); sethp(battleturn(att2,deff1,thpresult1)) ;settext(`Pok2 lost ${hp2 - hpnow2.current} hp`)}}}>Attack</p>
+  {/*  <div className='panel' > <p onClick={e => { if(speed1 > speed2) {sethp2(battleturn(att1,deff2,thpresult2));settext(`Pok2 lost ${hpnow2.current - thpresult2} hp`);
+     setTimeout(() => {sethp(battleturn(att2,deff1,thpresult1));settext(`Pok1 lost ${hpnow.current - thpresult1} hp`)},5000)}
+     else {sethp2(battleturn(att1,deff2,thpresult2)); sethp(battleturn(att2,deff1,thpresult1)) ;settext(`Pok2 lost ${hp2 - hpnow2.current} hp`)}}}>Attack</p>
     <p onClick={e => console.log(thpresult1,att2)}>Item </p>
     <p onClick={e => console.log(battleturn1(att1,deff1,hp1,att2,deff2,hp2,speed1,speed2))  }>Flee</p>
-    <p>{maxhp1}</p></div>
+  <p>{maxhp1}</p></div> */}
   </div>
   </>
   }
