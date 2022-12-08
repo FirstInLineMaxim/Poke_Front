@@ -59,6 +59,21 @@ bottom:330px;
 
 }
 
+.hp1 {
+position:absolute;
+left:00px;
+top: 30px;
+
+
+}
+
+.hp2 {
+position: absolute;
+left: 00px;
+top: 23px;
+
+
+}
 
 .fight_Pokemon1{
     position:absolute;

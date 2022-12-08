@@ -16,8 +16,8 @@ export default function useCombat({ id, enemy }) {
   let hpnow = useRef(null);
   let hpnow2 = useRef(null);
 
-  let maxhp1 = 0;
-  let maxhp2 = 0;
+  let minushp1 = 0;
+  let minushp2 = 0;
   let hp1 = 0;
   let hp2 = 0;
   let att1 = 0;
@@ -28,6 +28,8 @@ export default function useCombat({ id, enemy }) {
   let type2 = 0;
   let speed1 = 0;
   let speed2 = 0;
+  let name1 = 0;
+  let name2 = 0;
 
   // const [combatResult, setCombatResult] = useState()
   useEffect(() => {
@@ -48,30 +50,15 @@ export default function useCombat({ id, enemy }) {
     switch (true) {
       case att > deff:
         return hp - (att - deff);
+        break;
       case deff > att:
+        minushp2 = hp - (att - deff)
         return hp - 1;
     }
   }
 
-  /*function battleturn1(att1,deff1,hp1,att2,deff2,hp2,speed1,speed2) {
-      if(speed1 >= speed2) {
-      switch (true) {
-            case att1 > deff2:
-             return  sethp2(prev => prev - (att1 - deff2));
-              break;
-            case deff2 > att1:
-              return sethp2(prev => prev - 1);
-              break;
-          }
-                      } else { 
-            switch (true) {
-                  case att2 > deff1:
-                return     sethp(prev => prev - (att2 - deff1));
-                     break;
-                  case deff2 > att1:
-                return   sethp(prev => prev- 1);
-                   break;
-                }}}*/
+  
+              
 
   //logic for the whole combat until somebody loses
   function combat(p1, p2) {
@@ -87,6 +74,8 @@ export default function useCombat({ id, enemy }) {
       let deff2 = pok2.base.Defense;
       let type1 = pok1.type;
       let type2 = pok2.type;
+
+
 
       // console.log(type2);
       // // console.log(elements[pok1.type].weakness);
@@ -154,6 +143,12 @@ export default function useCombat({ id, enemy }) {
     type2 = pok2.type;
     speed1 = pok1.base.Speed;
     speed2 = pok2.base.Speed;
+    name1 = pok1.name.english
+    name2 = pok2.name.english
+    minushp1 = pok1.base.HP;
+    minushp2 = pok2.base.HP;
+
+
   }
 
   hpnow.current = hp1;
@@ -174,9 +169,9 @@ export default function useCombat({ id, enemy }) {
             </div>
             <div className="namepok1">
               {findPokemon(id).name.english}{" "}
-              <span>
+              <span className= 'hp1'>
                 {thpresult1 ? thpresult1 : sethp(hpnow.current)}/
-                {findPokemon(id).base.HP} HP
+                {findPokemon(id).base.HP} 
               </span>
             </div>
             <div className="fight_Pokemon2">
@@ -188,9 +183,9 @@ export default function useCombat({ id, enemy }) {
             </div>
             <div className="namepok2">
               {findPokemon(enemy).name.english}{" "}
-              <span>
+              <span className= 'hp2'>
                 {thpresult2 ? thpresult2 : sethp2(hpnow2.current)}/
-                {findPokemon(enemy).base.HP} HP
+                {findPokemon(enemy).base.HP} 
               </span>
             </div>
             <div className="panel">
@@ -198,19 +193,28 @@ export default function useCombat({ id, enemy }) {
               <p
                 onClick={(e) => {
                   if (speed1 > speed2) {
+                    minushp2 = minushp2 -  battleturn(att1, deff2, thpresult2);
+                    minushp1 = minushp1 - battleturn(att2, deff1, thpresult1)
+                    settext(`${name2} lost ${minushp2} hp`);
                      sethp2(battleturn(att1, deff2, thpresult2));
-                    settext(`Pok2 lost ${battleturn(att1,deff2,thpresult2)} hp`);
-                    setTimeout(() => {
+                     setTimeout(() => {
+                      settext(`${name1} lost ${minushp1} hp`);
                       sethp(battleturn(att2, deff1, thpresult1));
-                      settext(`Pok1 lost ${hpnow.current - thpresult1} hp`);
-                    }, 5000);
+                      minushp1 = thpresult1;
+                      }, 5000);
+                      minushp2 = thpresult2;
+                      
                   } else {
+                    minushp2 = minushp2 -  battleturn(att1, deff2, thpresult2);
+                    minushp1 = minushp1 - battleturn(att2, deff1, thpresult1);
+                    settext(`${name1} lost ${minushp1} hp`);
                     sethp(battleturn(att2, deff1, thpresult1));
-                    settext(`Pok1 lost ${hpnow.current - thpresult1} hp`);
-                    setTimeout(() => {
+                     setTimeout(() => {
+                      settext(`${name2} lost ${minushp2} hp`);
                       sethp(battleturn(att1, deff2, thpresult2));
-                      settext(`Pok2 lost ${hpnow.current - thpresult1} hp`);
-                    }, 5000);
+                      minushp2 = thpresult2;
+                       }, 5000);
+                       minushp1 = thpresult1;
                   }
                 }}
               >
@@ -218,12 +222,13 @@ export default function useCombat({ id, enemy }) {
               </p>
               <p onClick={(e) => console.log(thpresult1, att2)}>Item </p>
               <p onClick={(e) => console.log()}>Flee</p>
-              <p>{maxhp1}</p>
+              <p>{minushp1}</p>
             </div>
           </div>
         </>
       )}
-      <div className="ct">{combattext}</div>
+       <div className="ct">{combattext}</div>
+      
       {combatResult.current && (
         <p className="winner">{combatResult.current}!</p>
       )}
