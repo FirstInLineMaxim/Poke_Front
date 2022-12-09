@@ -113,12 +113,12 @@ return(
   <p>enemy id = {enemy}</p>
   <div className='fight_Current'>
     <div className='fight_Pokemon'>
-      <img src={`https://projectpokemon.org/images/sprites-models/normal-back/${findPokemon(id).name.english.toLowerCase()}.gif`}></img>
+      <img src={`https://projectpokemon.org/images/sprites-models/normal-back/${findPokemon(id).name.english.toLowerCase()}.gif`}alt ="you"></img>
       <span>{findPokemon(id).name.english}</span>
     </div>
     <h2> vs </h2>
     <div className='fight_Pokemon'>
-      <img src={`https://projectpokemon.org/images/normal-sprite/${findPokemon(enemy).name.english.toLowerCase()}.gif`}></img>
+      <img src={`https://projectpokemon.org/images/normal-sprite/${findPokemon(enemy).name.english.toLowerCase()}.gif` }alt="enemy"></img>
       <span>{findPokemon(enemy).name.english}</span>
       <span>{roundswon}</span>
     </div>

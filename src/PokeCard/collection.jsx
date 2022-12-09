@@ -10,19 +10,10 @@ export default function Collection() {
     axios.get('https://poke-api-f2zt.onrender.com/api/v1/pokemon').then(data => setData(data.data))
   }, [])
 
-
-  {/* TODO: making the filter. */ }
-
-  // const [filterType, setFilterType] = useState([])
-  // function filter(value){
-  //     const filtered = data.filter(ele => ele.type[0] === value || ele.type[1] === value)
-  //     setFilterType(filtered)
-  //     console.log(filterType)
-  // }
-
   return (
     <>
       {/* TODO: making the filter. */}
+      <div className='Cardinio'>
       <select>
         <option value="">Highest Health</option>
         <option value="">Lowest Health</option>
@@ -35,9 +26,10 @@ export default function Collection() {
         <option value="Ground">Ground</option>
         <option value="Water">Water</option>
       </select>
-      <div className='Card_Display'>
         {!data && <div className="loader_spinner"></div>}
+      <div className='Card_Display'>
         {data && data.map(ele => <Card data={ele} />)}
+      </div>
       </div>
     </>
   )

@@ -1,0 +1,35 @@
+.Hero_Container{
+    height: 100vh;
+    width: 100vw;
+    background-color: #f7cc1e;
+    background-image: url(https://jikkyofont.com/wp-content/uploads/2021/08/jikkyou1-3-1024x576.png);
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.Fight_Button{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+
+    position: relative;
+    border: unset;
+    border-radius: 12px;
+    height: 4rem;
+    width: 8rem;
+    font-size: 3rem;
+    background: #ff0000;
+    color: #ffffff;
+}
+
+.Popup{
+    position: relative;
+    top: 10%;
+    margin: auto;
+    /* text-align: center; */
+    background-color: antiquewhite;
+    height: 65vh;
+    width: 50vw;
+}
+
+
