@@ -1,5 +1,6 @@
 .HighScore{
-    width: 100vw;   
+    width: 100vw;
+    align-items: center;   
 }
 .rows_flex{
     display: flex;
@@ -11,4 +12,9 @@
 }
 .leader_poke{
     height:8rem
+}
+.Center_Pokeball{
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }

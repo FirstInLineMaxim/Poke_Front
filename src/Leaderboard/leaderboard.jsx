@@ -20,10 +20,13 @@ function changeNumber(num) {
         }
       }
 function findPokemon(id){
-    const found = data.find(ele => ele._id == id)
-    if(found){
-        return {image:findImage(found),pokemonName:found.name.english}
+    if ( data ){
+        const found = data.find(ele => ele._id == id)
+        if(found){
+            return {image:findImage(found),pokemonName:found.name.english}
+        }
     }
+    
 }
 function findImage (found){
     return `https://assets.pokemon.com/assets/cms2/img/pokedex/detail/${changeNumber(
@@ -38,7 +41,7 @@ function findImage (found){
     <th>Pokemon</th>
     <th>Score</th>
   </tbody>
-  {leaderboard && leaderboard.map(function(ele,i){
+  {data ? leaderboard && leaderboard.map(function(ele,i){
     const {image,pokemonName} = findPokemon(ele.pokemon)
     return(  
     <tbody key={i} className='rows_flex'>
@@ -46,7 +49,8 @@ function findImage (found){
     <td><img className="leader_poke"src={image} alt={pokemonName}/>{pokemonName}</td>
     <td>{ele.score}</td>
   </tbody>)
-})}
+}) :<div className='Center_Pokeball'> <div className="loader_spinner"></div></div>}
+  
 </table>
   )
 }
