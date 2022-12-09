@@ -10,16 +10,6 @@ export default function Collection() {
     axios.get('https://poke-api-f2zt.onrender.com/api/v1/pokemon').then(data => setData(data.data))
   }, [])
 
-
-  {/* TODO: making the filter. */ }
-
-  // const [filterType, setFilterType] = useState([])
-  // function filter(value){
-  //     const filtered = data.filter(ele => ele.type[0] === value || ele.type[1] === value)
-  //     setFilterType(filtered)
-  //     console.log(filterType)
-  // }
-
   return (
     <>
       {/* TODO: making the filter. */}

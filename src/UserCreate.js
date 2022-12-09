@@ -6,7 +6,7 @@ export default function UserCreate({score,pokemon}) {
     //TODO:make the function redirect to leaderbords
     function gameEnd (e){
     e.preventDefault(); 
-    axios.post('http://localhost:4444/leaderboard/player',{score:score , username:username,pokemon:pokemon._id})}
+    axios.post('https://poke-api-f2zt.onrender.com/leaderboard/create',{score:score , username:username,pokemon:pokemon._id}).then(window.location.replace('/leaderboard'))}
   return (
     <>
     <form >

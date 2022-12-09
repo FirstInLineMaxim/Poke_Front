@@ -1,0 +1,14 @@
+.HighScore{
+    width: 100vw;   
+}
+.rows_flex{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height:8rem;
+    gap:1rem;
+    border: 1px solid salmon;
+}
+.leader_poke{
+    height:8rem
+}
