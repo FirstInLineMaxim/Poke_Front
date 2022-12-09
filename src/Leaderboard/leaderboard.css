@@ -1,6 +1,6 @@
 .HighScore{
     width: 100vw;
-    align-items: center;   
+    align-items: center;
 }
 .rows_flex{
     display: flex;
@@ -17,4 +17,9 @@
     width: 100%;
     display: flex;
     justify-content: center;
+}
+.display_reverse{
+    display: flex;
+    flex-direction: column-reverse  ;
+
 }
