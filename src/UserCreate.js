@@ -5,7 +5,7 @@ export default function UserCreate({score,pokemon}) {
     const [username,setUsername]= useState()
     function gameEnd (e){
     e.preventDefault(); 
-    axios.post('https://poke-api-f2zt.onrender.com/leaderboard/create',{score:score , username:username,pokemon:pokemon._id}).then(window.location.replace('/leaderboard'))}
+    axios.post('https://poke-api-f2zt.onrender.com/leaderboard/create',{score:score , username:username,pokemon:pokemon._id})}
   return (
     <>
     <form >
