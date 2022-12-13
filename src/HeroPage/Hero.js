@@ -16,8 +16,8 @@ export default function Hero() {
     <div className='Hero_Container'>
         {/* NAVIGATION */}
         <div className='TopNav'>
-        <Link className='' to="/choose"><button>Pokedex</button></Link>
-        <Link className='' to="/leaderboard"><button>Leaderboard</button></Link>
+        <Link className='' to="choose"><button>Pokedex</button></Link>
+        <Link className='' to="leaderboard"><button>Leaderboard</button></Link>
         </div>
         <button onClick={popup} className='Fight_Button'>Fight</button>
       {/* SETS THE POPUPSCREEN HTML CODE IF ITS PRESENTED */}
