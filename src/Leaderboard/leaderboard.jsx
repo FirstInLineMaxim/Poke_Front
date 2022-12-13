@@ -7,8 +7,8 @@ export default function Leaderboard() {
     const [data, setData] = useState()
 
     useEffect(() => {
-        axios.get('https://poke-api-f2zt.onrender.com/leaderboard').then(data => setLeaderboard(data.data))
-        axios.get('https://poke-api-f2zt.onrender.com/api/v1/pokemon').then(data => setData(data.data))
+        axios.get('https://poke-api-f2zt.onrender.com/leaderboard').then(data => setLeaderboard(data.data)).catch(err=>console.log(err))
+        axios.get('https://poke-api-f2zt.onrender.com/api/v1/pokemon').then(data => setData(data.data)).catch(err=>console.log(err))
     }, [])
     function changeNumber(num) {
         if (num.toString().length === 1) {

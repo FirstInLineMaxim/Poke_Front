@@ -8,10 +8,10 @@ function App() {
   return (
     <>
     <Routes>
-      <Route path="/" element={<Hero/>}/>
-      <Route path="/Choose" element={<Collection/>}/>
-      <Route path="/Battle/:id" element={<BattleGround/>}/>
-      <Route path="/leaderboard" element={<Leaderboard/>}/>
+      <Route path="Poke_Front/" element={<Hero/>}/>
+      <Route path="Poke_Front/Choose" element={<Collection/>}/>
+      <Route path="Poke_Front/Battle/:id" element={<BattleGround/>}/>
+      <Route path="Poke_Front/leaderboard" element={<Leaderboard/>}/>
     </Routes>
     </>
   );
