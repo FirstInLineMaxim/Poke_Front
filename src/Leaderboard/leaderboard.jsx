@@ -21,6 +21,7 @@ export default function Leaderboard() {
     }
     function findPokemon(id) {
         if (data) {
+            // eslint-disable-next-line eqeqeq
             const found = data.find(ele => ele._id == id)
             if (found) {
                 return { image: findImage(found), pokemonName: found.name.english }
