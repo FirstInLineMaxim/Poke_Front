@@ -1,25 +1,44 @@
-.HighScore{
+.HighScore {
     width: 100vw;
     align-items: center;
 }
-.rows_flex{
+
+.rows_flex {
     display: flex;
     justify-content: space-around;
     align-items: center;
-    height:8rem;
-    gap:1rem;
-    border: 1px solid salmon;
+    height: 8rem;
 }
-.leader_poke{
-    height:8rem
+
+.rows_flex:nth-child(2n) {
+
+    background-color: rgba(127, 255, 212, 0.475);
 }
-.Center_Pokeball{
+
+.username {
+    font-size: 1.25rem;
+    font-weight: 700;
+}
+
+.rows_flex td {
+    display: flex;
+    justify-content: center;
+    width: 33%;
+    text-align: center;
+}
+
+.leader_poke {
+    height: 8rem;
+}
+
+.Center_Pokeball {
     width: 100%;
     display: flex;
     justify-content: center;
 }
-.display_reverse{
+
+.display_reverse {
     display: flex;
-    flex-direction: column-reverse  ;
+    flex-direction: column-reverse;
 
 }

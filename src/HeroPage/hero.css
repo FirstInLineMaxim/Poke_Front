@@ -1,4 +1,4 @@
-.Hero_Container{
+.Hero_Container {
     height: 100vh;
     width: 100vw;
     background-color: #f7cc1e;
@@ -7,7 +7,7 @@
     background-repeat: no-repeat;
 }
 
-.Fight_Button{
+.Fight_Button {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -22,7 +22,7 @@
     color: #ffffff;
 }
 
-.Popup{
+.Popup {
     position: relative;
     top: 10%;
     margin: auto;
@@ -32,4 +32,22 @@
     width: 50vw;
 }
 
+.header_btn {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 
+    position: relative;
+    border: unset;
+    border-radius: 12px;
+    height: 2rem;
+    width: fit-content;
+    font-size: 1.5rem;
+    background: #ff0000;
+    color: #ffffff;
+}
+
+.TopNav {
+    display: flex;
+    justify-content: space-around;
+}
